@@ -20,6 +20,8 @@ import { DeviceSelectComponent } from './conference/settings/device-select/devic
 
 import { FormsModule } from '@angular/forms';
 import { HomeConferenceComponent } from './conference/home/home.component';
+import { HelpComponent } from './help/help.component';
+import { HelpItemComponent } from './help/help-item/help-item.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { HomeConferenceComponent } from './conference/home/home.component';
     ParticipantsComponent,
     RoomsComponent,
     SettingsComponent,
-    DeviceSelectComponent
+    DeviceSelectComponent,
+    HelpComponent,
+    HelpItemComponent
   ],
   imports: [
     BrowserModule,

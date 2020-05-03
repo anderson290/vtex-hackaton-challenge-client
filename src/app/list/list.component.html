@@ -46,7 +46,7 @@
                   
         </div>
         
-        <button class="w-100 my-4" (click)="sendInfos()" [disabled]="!form.valid" color="primary" mat-raised-button>
+        <button class="w-100 my-4" (click)="sendInfos()" [routerLink]="['/help']" [disabled]="!form.valid" color="primary" mat-raised-button>
             Enviar
         </button>
 

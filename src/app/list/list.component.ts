@@ -69,7 +69,7 @@ export class ListComponent implements OnInit {
 
   sendInfos(){
     // console.log(this.form.value);
-    this.route.navigate(['/conference']);
+    // this.route.navigate(['/help']);
   }
 
 }
