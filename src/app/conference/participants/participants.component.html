@@ -1,10 +1,10 @@
 <div id="participant-list">
     <div id="alone" [ngClass]="{ 'table': isAlone, 'd-none': !isAlone }">
         <p class="text-center text-monospace h3" style="display: table-cell">
-            You're the only one in this room. <i class="far fa-frown"></i>
+            Você é o único presente nesta sala!. <i class="far fa-frown"></i>
             <br />
             <br />
-            As others join, they'll start showing up here...
+            Eles começarão a aparecer aqui...
         </p>
     </div>
     <div [ngClass]="{ 'd-none': isAlone }">
@@ -13,7 +13,7 @@
                 <li class="nav-item">
                     <button type="button" class="btn btn-lg leave-room"
                             title="Click to leave this room." (click)="onLeaveRoom()">
-                        Leave "{{ activeRoomName }}" Room?
+                        Sair da sala "{{ activeRoomName }}"?
                     </button>
                 </li>
             </ul>

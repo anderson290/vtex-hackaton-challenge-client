@@ -5,6 +5,7 @@ import { ReplaySubject , Observable } from 'rxjs';
 
 interface AuthToken {
     token: string;
+    room: string;
 }
 
 export interface NamedRoom {
@@ -35,6 +36,16 @@ export class VideoChatService {
                       .toPromise();
         return auth.token;
     }
+
+    async getRoomName() {
+        const auth =
+            await this.http
+                      .get<AuthToken>(`http://localhost:3000/twilio/token`)
+                      .toPromise();
+                      console.log(auth)
+        return auth.room;
+    }
+
 
     getAllRooms() {
 

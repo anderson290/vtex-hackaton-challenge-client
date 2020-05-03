@@ -12,7 +12,7 @@ export class RoomsComponent implements OnInit, OnDestroy {
     @Output() roomChanged = new EventEmitter<string>();
     @Input() activeRoomName: string;
 
-    roomName: string;
+    roomName: any;
     rooms: NamedRoom[];
 
     private subscription: Subscription;
@@ -27,6 +27,12 @@ export class RoomsComponent implements OnInit, OnDestroy {
                 .$roomsUpdated
                 .pipe(tap(_ => this.updateRooms()))
                 .subscribe();
+
+        const name = await this.videoChatService.getRoomName();
+
+        console.log(name)
+        this.roomName = name;
+
     }
 
     ngOnDestroy() {
