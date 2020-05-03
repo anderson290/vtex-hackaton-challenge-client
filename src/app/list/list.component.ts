@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material/icon';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -23,6 +24,7 @@ export class ListComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
+    private route: Router,
     iconRegistry: MatIconRegistry,
     sanitizer: DomSanitizer,
     ) {
@@ -67,6 +69,7 @@ export class ListComponent implements OnInit {
 
   sendInfos(){
     // console.log(this.form.value);
+    this.route.navigate(['/conference']);
   }
 
 }

@@ -11,14 +11,30 @@ import { MaterialCustomModule } from './modules/material-custom.module';
 import { ItemComponent } from './category/item/item.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ConferenceComponent } from './conference/conference.component';
+import { CameraComponent } from './conference/camera/camera.component';
+import { ParticipantsComponent } from './conference/participants/participants.component';
+import { RoomsComponent } from './conference/rooms/rooms.component';
+import { SettingsComponent } from './conference/settings/settings.component';
+import { DeviceSelectComponent } from './conference/settings/device-select/device-select.component';
+
+import { FormsModule } from '@angular/forms';
+import { HomeConferenceComponent } from './conference/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    HomeConferenceComponent,
     CategoryComponent,
     ListComponent,
-    ItemComponent
+    ItemComponent,
+    ConferenceComponent,
+    CameraComponent,
+    ParticipantsComponent,
+    RoomsComponent,
+    SettingsComponent,
+    DeviceSelectComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +42,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MaterialCustomModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
