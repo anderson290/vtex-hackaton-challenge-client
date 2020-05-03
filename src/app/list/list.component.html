@@ -1,0 +1,54 @@
+<div class="container">
+    <form [formGroup]="form">
+        <div class="center-object mt-2 mb-2">
+            <!-- <mat-icon svgIcon="tel" class="w-50 my-4 h-25" aria-hidden="false"></mat-icon> -->
+           
+            <img [src]="'assets/images/user.png'" class="camera__picture img-fluid" *ngIf="!imgURL"/>
+            <input class="inputfile" [hidden]="true" id="file" #file type="file" accept='image/*' (change)="preview(file.files)" />
+            <img [src]="imgURL" class="camera__picture img-fluid" *ngIf="imgURL">
+            <label for="file" class="camera-icon">        
+                <mat-icon>camera_alt</mat-icon>
+            </label>
+        </div>
+  
+        <section class="row">
+            <mat-form-field appearance="outline" class="col-12 col-md-5">
+                <mat-label>Nome</mat-label>
+                <input formControlName="name" matInput placeholder="Digite aqui..">
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline" class="col-12 col-md-7">
+                <mat-label>Sobrenome</mat-label>
+                <input formControlName="lastName" matInput placeholder="Digite aqui..">
+            </mat-form-field>
+        </section>
+        <section class="row">
+            <mat-form-field appearance="outline" class="col-12">
+                <mat-label>E-mail</mat-label>
+                <input matInput formControlName="email" type="e-mail" placeholder="example@email.com">
+            </mat-form-field>
+        </section>
+                
+   
+        <p>Escolha sua(s) preferencia(s)</p>
+        <div class="row">    
+            <mat-selection-list #links class="col-12">
+                <mat-list-option color="primary" value="{{link?.link}}" (click)="getItens(links)" *ngFor="let link of linksArray">
+                  {{link?.name}}
+                </mat-list-option>
+              </mat-selection-list>
+              
+              <div class="col-12 text-right">
+                <p class="my-2">
+                    Itens Selecionados: {{links.selectedOptions.selected.length}}
+                  </p> 
+              </div>
+                  
+        </div>
+        
+        <button class="w-100 my-4" (click)="sendInfos()" [disabled]="!form.valid" color="primary" mat-raised-button>
+            Enviar
+        </button>
+
+    </form>
+</div>

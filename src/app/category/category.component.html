@@ -1,0 +1,9 @@
+<div class="container">
+    <div >
+        <h1 class="text-center my-4 w-100">Escolha o segmento que deseja!</h1>
+        <ul class="row">
+            <li class="col-6 col-md-4 mt-2" app-item *ngFor="let item of categories" [cat]="item"></li>
+        </ul>
+       
+    </div>
+</div>
